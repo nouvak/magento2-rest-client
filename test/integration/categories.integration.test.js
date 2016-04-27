@@ -9,7 +9,7 @@ suite('categories tests', function () {
         var client = Magento2Client(credentials);
         client.categories.list()
             .then(function (categories) {
-                assert.equal(categories.parent_id, 1);
+                assert.equal(categories.parentId, 1);
             })
             .then(done, done);
     });
@@ -26,7 +26,7 @@ suite('categories tests', function () {
         };
         client.categories.create(newCategory)
             .then(function (result) {
-                assert.equal(result.parent_id, 3);
+                assert.equal(result.parentId, 3);
             })
             .then(done, done);
     })
