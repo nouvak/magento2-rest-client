@@ -1,14 +1,11 @@
 {
   "name": "magento2-rest-client",
-  "version": "0.0.1",
   "description": "REST client for accessing Magento 2 functionality.",
-  "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
+  "author": "Marko Novak <nouvak@gmail.com>",
+  "version": "0.0.1",
+  "license": "MIT",
   "repository": {
     "type": "git",
-
     "url": "https://github.com/nouvak/magento2-rest-client.git"
   },
   "keywords": [
@@ -16,13 +13,23 @@
     "REST",
     "API"
   ],
-  "author": "Marko Novak <nouvak@gmail.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nouvak/magento2-rest-client/issues"
   },
   "homepage": "https://github.com/nouvak/magento2-rest-client#readme",
+  "directories": {
+    "lib": "./lib"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
   "dependencies": {
-    "oauth-1.0a": "^1.0.1"
+    "oauth-1.0a": "^1.0.1",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
   }
 }
