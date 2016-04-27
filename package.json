@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "oauth-1.0a": "^1.0.1",
+    "request": "^2.72.0",
     "winston": "^2.2.0"
   },
   "devDependencies": {
