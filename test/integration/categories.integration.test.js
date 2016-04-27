@@ -9,10 +9,27 @@ suite('categories tests', function () {
         var client = Magento2Client(credentials);
         client.categories.list()
             .then(function (categories) {
-                assert.equal(categories, '');
+                assert.equal(categories.parent_id, 1);
             })
             .then(done, done);
     });
+
+    test('create category test', function (done) {
+        var client = Magento2Client(credentials);
+        var newCategory = {
+            category: {
+                parentId: 3,
+                name: 'Category from integratin test',
+                isActive: true,
+                includeInMenu: true,
+            }
+        };
+        client.categories.create(newCategory)
+            .then(function (result) {
+                assert.equal(result.parent_id, 3);
+            })
+            .then(done, done);
+    })
 });
 
 
