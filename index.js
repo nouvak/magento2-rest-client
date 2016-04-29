@@ -14,7 +14,7 @@ module.exports.Magento2Client = function (options) {
     var client = RestClient(options);
 
     instance.categories = categories(client);
-    instance.products = products;
+    instance.products = products(client);
 
     return instance;
 }
