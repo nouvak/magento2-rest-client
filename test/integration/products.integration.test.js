@@ -12,47 +12,53 @@ suite('products tests', function () {
     });
 
     test('list products test', function (done) {
-        client.products.list()
+        client.products.list('Test')
             .then(function (products) {
-                assert.equal(products.parentId, 1);
+                assert.isTrue(products.totalCount > 0);
             })
             .then(done, done);
     });
 
     test('create product test', function (done) {
-        var newCategory = {
-            category: {
-                parentId: 3,
-                name: 'Category from integration test',
-                isActive: true,
-                includeInMenu: true,
+        var newProduct = {
+            product: {
+                'sku': 'test123',
+                'name': 'Integration test product',
+                'typeId': 'simple',
+                'price': 12.3,
+                'attributeSetId': 4,
+                'status': 1,
+                'visibility': 4,
             }
         };
-        client.categories.create(newCategory)
+        client.products.create(newProduct)
             .then(function (result) {
-                assert.equal(result.parentId, 3);
+                assert.equal(result.name, 'Integration test product');
             })
             .then(done, done);
     });
 
     test('update product test', function (done) {
-        var categoryUpdate = {
-            category: {
-                parentId: 3,
-                name: 'Podkategorija 1 updated',
-                isActive: true,
-                includeInMenu: true,
+        var productUpdate = {
+            product: {
+                'sku': 'test123',
+                'name': 'Integration test product updated',
+                'typeId': 'simple',
+                'price': 12.3,
+                'attributeSetId': 4,
+                'status': 1,
+                'visibility': 4,
             }
         };
-        client.categories.update(4, categoryUpdate)
+        client.products.update('test123', productUpdate)
             .then(function (result) {
-                assert.equal(result.parentId, 3);
+                assert.equal(result.name, 'Integration test product updated');
             })
             .then(done, done);
     });
 
     test('delete product test', function (done) {
-        client.categories.delete(23)
+        client.products.delete(23)
             .then(function (result) {
                 assert.isTrue(result);
             })
