@@ -2,7 +2,7 @@
   "name": "magento2-rest-client",
   "description": "REST client for accessing Magento 2 functionality.",
   "author": "Marko Novak <nouvak@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "repository": {
     "type": "git",
