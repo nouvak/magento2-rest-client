@@ -7,11 +7,13 @@ var productMedia = require('./lib/product_media');
 var productAttributes = require('./lib/product_attributes');
 
 const MAGENTO_API_VERSION = 'V1';
+var storeId = 'default';
 
 module.exports.Magento2Client = function (options) {
     var instance = {};
 
     options.version = MAGENTO_API_VERSION;
+    options.storeId = storeId;
     
     var client = RestClient(options);
 
