@@ -24,7 +24,8 @@ The code sample below shows the usage of the library:
           'consumerKey': '<OAuth 1.0a consumer key>',
           'consumerSecret': '<OAuth 1.0a consumer secret>',
           'accessToken': '<OAuth 1.0a access token>',
-          'accessTokenSecret': '<OAuth 1.0a access token secret>'
+          'accessTokenSecret': '<OAuth 1.0a access token secret>',
+          'storeId': 'default'
     };
     var client = Magento2Client(options);
     client.categories.list()
